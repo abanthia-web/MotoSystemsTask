@@ -1,0 +1,78 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: BMS VSU
+
+
+BO_ 149 BMS_M1_T: 8 BMS
+ SG_ CMUS_CMU1_CELL_T1 : 0|8@1- (1,0) [10|70] "°C" Vector__XXX
+ SG_ CMUS_CMU1_CELL_T2 : 8|8@1- (1,0) [10|70] "°C" Vector__XXX
+ SG_ CMUS_CMU1_CELL_T3 : 16|8@1- (1,0) [10|70] "°C" Vector__XXX
+ SG_ CMUS_CMU1_CELL_T4 : 24|8@1- (1,0) [10|70] "°C" Vector__XXX
+ SG_ CMUS_CMU1_CELL_T5 : 32|8@1- (1,0) [10|70] "°C" Vector__XXX
+ SG_ CMUS_CMU1_CELL_T6 : 40|8@1- (1,0) [10|70] "°C" Vector__XXX
+ SG_ CMUS_CMU1_CELL_T7 : 48|8@1- (1,0) [10|70] "°C" Vector__XXX
+ SG_ CMUS_CMU1_CELL_T8 : 56|8@1- (1,0) [10|70] "°C" Vector__XXX
+
+BO_ 1 BMS_CellStatusVoltages: 6 BMS
+ SG_ CELL_V_MIN_VAL : 0|16@1+ (0.1,0) [2000|4000] "mV" Vector__XXX
+ SG_ CELL_V_AVG : 16|16@1+ (0.1,0) [2000|4000] "mV" Vector__XXX
+ SG_ CELL_V_MAX_VAL : 32|16@1+ (0.1,0) [2000|4000] "mV" Vector__XXX
+
+BO_ 9 BMS_BattStatus: 4 BMS
+ SG_ PACK_V_SUM_OF_CELLS : 0|16@1+ (0.1,0) [0|400] "V" Vector__XXX
+ SG_ PACK_Q_SOC_TRIMMED : 16|16@1+ (0.01,0) [0|100] "%" Vector__XXX
+
+
+
+CM_ BU_ BMS "Battery Management System in a Motorcycle";
+CM_ BU_ VSU "Vehicle Control Unit in a Motorcycle";
+CM_ BO_ 149 "First 8 cell temperatures for CMU1";
+CM_ SG_ 149 CMUS_CMU1_CELL_T1 "Cell temperature for cmu[0], cell_t[0]";
+CM_ SG_ 149 CMUS_CMU1_CELL_T2 "Cell temperature for cmu[0], cell_t[1]";
+CM_ SG_ 149 CMUS_CMU1_CELL_T3 "Cell temperature for cmu[0], cell_t[2]";
+CM_ SG_ 149 CMUS_CMU1_CELL_T4 "Cell temperature for cmu[0], cell_t[3]";
+CM_ SG_ 149 CMUS_CMU1_CELL_T5 "Cell temperature for cmu[0], cell_t[4]";
+CM_ SG_ 149 CMUS_CMU1_CELL_T6 "Cell temperature for cmu[0], cell_t[5]";
+CM_ SG_ 149 CMUS_CMU1_CELL_T7 "Cell temperature for cmu[0], cell_t[6]";
+CM_ SG_ 149 CMUS_CMU1_CELL_T8 "Cell temperature for cmu[0], cell_t[7]";
+CM_ BO_ 1 "Lowest, average, and highest cell voltages";
+CM_ SG_ 1 CELL_V_MIN_VAL "Lowest cell voltage";
+CM_ SG_ 1 CELL_V_AVG "Average cell voltage";
+CM_ SG_ 1 CELL_V_MAX_VAL "Highest cell voltage";
+CM_ BO_ 9 "Signals for the V Sum of all cells (0-400V) and the State of Charge of the Battery";
+CM_ SG_ 9 PACK_V_SUM_OF_CELLS "Sum of all cells";
+CM_ SG_ 9 PACK_Q_SOC_TRIMMED "State of Charge of the Battery";
+
